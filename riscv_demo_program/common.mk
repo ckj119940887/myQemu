@@ -2,7 +2,7 @@
 
 CROSS_COMPILE = riscv64-unknown-elf-
 QEMU = ../build/qemu-system-riscv32 
-QFLAGS = -nographic -smp 1 -M riscv_demo_m -cpu riscv_demo_m_32 -bios none
+QFLAGS = -serial stdio -smp 1 -M riscv_demo -cpu riscv_demo_cpu_m_32 
 
 CC = $(CROSS_COMPILE)gcc
 OBJCOPY = $(CROSS_COMPILE)objcopy
@@ -37,6 +37,7 @@ include $(DEPS)
 endif
 
 $(TARGET): $(ASM_OBJ) $(SRC_OBJ)   
+	@echo "BUILD_ROOT=$(BUILD_ROOT)"
 	$(CC) -T $(BUILD_ROOT)/linker_script $(CFLAGS) -o $(TARGET) $^
 	$(OBJCOPY) -O binary $(OBJFLAGS) $(TARGET) $(addsuffix .bin,$(basename $(TARGET)))
 

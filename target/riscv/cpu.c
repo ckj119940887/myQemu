@@ -183,7 +183,7 @@ static void rv64_sifive_e_cpu_init(Object *obj)
     qdev_prop_set_bit(DEVICE(obj), "mmu", false);
 }
 
-static void rv64_riscv_demo_m_cpu_init(Object *obj)
+static void rv64_riscv_demo_cpu_m_init(Object *obj)
 {
     CPURISCVState *env = &RISCV_CPU(obj)->env;
     set_misa(env, RV64 | RVI | RVM | RVA | RVC | RVU);
@@ -231,7 +231,7 @@ static void rv32_imafcu_nommu_cpu_init(Object *obj)
     qdev_prop_set_bit(DEVICE(obj), "mmu", false);
 }
 
-static void rv32_riscv_demo_m_cpu_init(Object *obj)
+static void rv32_riscv_demo_cpu_m_init(Object *obj)
 {
     CPURISCVState *env = &RISCV_CPU(obj)->env;
     set_misa(env, RV32 | RVI | RVM | RVA | RVF | RVC | RVU);
@@ -805,13 +805,13 @@ static const TypeInfo riscv_cpu_type_infos[] = {
     DEFINE_CPU(TYPE_RISCV_CPU_SIFIVE_E31,       rv32_sifive_e_cpu_init),
     DEFINE_CPU(TYPE_RISCV_CPU_SIFIVE_E34,       rv32_imafcu_nommu_cpu_init),
     DEFINE_CPU(TYPE_RISCV_CPU_SIFIVE_U34,       rv32_sifive_u_cpu_init),
-    DEFINE_CPU(TYPE_RISCV_DEMO_M_CPU_32,        rv32_riscv_demo_m_cpu_init),
+    DEFINE_CPU(TYPE_RISCV_DEMO_CPU_M_32,        rv32_riscv_demo_cpu_m_init),
 #elif defined(TARGET_RISCV64)
     DEFINE_CPU(TYPE_RISCV_CPU_BASE64,           rv64_base_cpu_init),
     DEFINE_CPU(TYPE_RISCV_CPU_SIFIVE_E51,       rv64_sifive_e_cpu_init),
     DEFINE_CPU(TYPE_RISCV_CPU_SIFIVE_U54,       rv64_sifive_u_cpu_init),
     DEFINE_CPU(TYPE_RISCV_CPU_SHAKTI_C,         rv64_sifive_u_cpu_init),
-    DEFINE_CPU(TYPE_RISCV_DEMO_M_CPU_64,        rv64_riscv_demo_m_cpu_init),
+    DEFINE_CPU(TYPE_RISCV_DEMO_CPU_M_64,        rv64_riscv_demo_cpu_m_init),
 #endif
 };
 

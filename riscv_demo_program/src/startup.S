@@ -22,7 +22,8 @@ _start:
   
   # setup stack
   slli t0, t0, 10
-  la sp, stack_end
+  #la sp, stack_end
+  li sp, 0x88000000
   add sp, sp, t0
 
   # main function

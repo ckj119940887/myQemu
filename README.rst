@@ -2,10 +2,15 @@
 RISCV_DEMO 
 ===========
 相关文件:
+
 hw/riscv/riscv_demo_m.c: RISCV SoC与RISCV Board的实现
+
 include/hw/riscv/riscv_demo_m.h:RISCV SoC与RISCV Board的定义
+
 include/hw/riscv/riscv_demo_cpu.h:定义了RISCV_DEMO的相关类型
+
 target/riscv/cpu.h:定义了RISCV_DEMO的相关类型
+
 target/riscv/cpu.c:对RISCV_DEMO的相关类型的实现，定义了支持的指令集以及是否使用MMU
 
 ===========

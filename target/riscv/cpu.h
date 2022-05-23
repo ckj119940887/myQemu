@@ -44,8 +44,8 @@
 #define TYPE_RISCV_CPU_SIFIVE_E51       RISCV_CPU_TYPE_NAME("sifive-e51")
 #define TYPE_RISCV_CPU_SIFIVE_U34       RISCV_CPU_TYPE_NAME("sifive-u34")
 #define TYPE_RISCV_CPU_SIFIVE_U54       RISCV_CPU_TYPE_NAME("sifive-u54")
-#define TYPE_RISCV_DEMO_M_CPU_32        RISCV_CPU_TYPE_NAME("riscv_demo_m_32")
-#define TYPE_RISCV_DEMO_M_CPU_64        RISCV_CPU_TYPE_NAME("riscv_demo_m_64")
+#define TYPE_RISCV_DEMO_CPU_M_32        RISCV_CPU_TYPE_NAME("riscv_demo_cpu_m_32")
+#define TYPE_RISCV_DEMO_CPU_M_64        RISCV_CPU_TYPE_NAME("riscv_demo_cpu_m_64")
 
 #if defined(TARGET_RISCV32)
 # define TYPE_RISCV_CPU_BASE            TYPE_RISCV_CPU_BASE32
